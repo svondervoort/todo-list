@@ -91,7 +91,7 @@
 
 <div class="fixed top-0 left-0 right-0 bg-violet-900 text-white px-4">
     <div class="container max-w-screen-sm mx-auto sm:px-4 flex gap-4">
-        <input class="placeholder:italic placeholder:text-violet-400 flex-1 block bg-white w-fullpy-2 p-0 bg-transparent text-white focus:outline-none focus:border-violet-500 focus:ring-violet-500 focus:ring-1 sm:text-sm"
+        <input class="placeholder:italic placeholder:text-violet-400 flex-1 block w-fullpy-2 p-0 bg-transparent text-white focus:outline-none focus:border-violet-500 focus:ring-violet-500 focus:ring-1 sm:text-sm"
                placeholder="Add product..." type="text" name="search"/>
         <button class="flex justify-center items-center h-10 w-10" class:opacity-50={!showChecked} on:click={toggleShowChecked}>
             {#if showChecked}
