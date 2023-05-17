@@ -2,15 +2,21 @@
     import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
     import {faPencil} from "@fortawesome/free-solid-svg-icons/faPencil";
 
+    import { settings } from '../stores/settings.js';
+    let showChecked;
+    settings.subscribe(value => {
+        showChecked = value.showChecked;
+    });
+
     export let id;
     export let name;
     export let price = null;
     export let amount = 1;
     export let notes = null;
-    export let checked;
+    export let checked = false;
 </script>
 
-<label class:line-through={checked} class:bg-slate-100={checked} class:text-slate-400={checked} class:opacity-50={checked}
+<label class:line-through={checked} class:bg-slate-100={checked} class:text-slate-400={checked} class:opacity-50={checked} class:hidden={!showChecked && checked}
        class="block text-sm hover:text-slate-400 flex hover:bg-slate-100 divide-x divide-slate-200">
     <input hidden type=checkbox bind:checked={checked}>
     <span class="flex flex-1 items-center gap-4 px-4 py-2">
@@ -22,7 +28,6 @@
         <span class="flex-1">
             <span class="flex flex-col">
                 <span>{name}</span>
-
                 {#if notes}
                     <span class="text-xs text-slate-400">{notes}</span>
                 {/if}
@@ -34,7 +39,7 @@
             </span>
         {/if}
     </span>
-    <a href="#" class="px-4 py-2 text-slate-300 hover:text-violet-500 flex items-center justify-center">
-        <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
+    <a href="#" class="px-4 py-2 text-slate-300 hover:bg-violet-500 hover:text-white flex items-center justify-center">
+        <FontAwesomeIcon class="fa-fw" icon={faPencil}></FontAwesomeIcon>
     </a>
 </label>
