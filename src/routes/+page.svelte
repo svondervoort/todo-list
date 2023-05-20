@@ -104,7 +104,7 @@
 </div>
 
 <div class="container max-w-screen-sm mx-auto sm:py-8 sm:px-4">
-    <div class="divide-y divide-slate-400/20 sm:rounded bg-white leading-5 text-slate-900 sm:shadow-xl sm:shadow-black/5 ring-1 ring-slate-200 overflow-hidden">
+    <div class="divide-y divide-white/20 sm:rounded leading-5 text-white ring-1 ring-white/20 overflow-hidden">
         {#each categories as category, index (category.id)}
             <Category {...category}/>
         {/each}

@@ -16,10 +16,10 @@
     export let checked = false;
 </script>
 
-<label class:line-through={checked} class:bg-slate-100={checked} class:text-slate-400={checked} class:opacity-50={checked} class:hidden={!showChecked && checked}
-       class="block text-sm hover:text-slate-400 flex hover:bg-slate-100 divide-x divide-slate-200">
+<label class:line-through={checked} class:opacity-50={checked} class:hidden={!showChecked && checked}
+       class="block text-sm flex divide-x divide-white/20">
     <input hidden type=checkbox bind:checked={checked}>
-    <span class="flex flex-1 items-center gap-4 px-4 py-2">
+    <span class="flex flex-1 items-center gap-4 px-4 py-2 md:gap-8 md:px-8 md:py-4 md:px-8 md:py-4">
         {#if amount}
             <span class="text-xs text-slate-400">
                 {amount}x
@@ -39,7 +39,7 @@
             </span>
         {/if}
     </span>
-    <a href="#" class="px-4 py-2 text-slate-300 hover:bg-violet-500 hover:text-white flex items-center justify-center">
+    <a href="#" class="px-4 py-2 text-slate-300 hover:bg-white hover:text-black flex items-center justify-center">
         <FontAwesomeIcon class="fa-fw" icon={faPencil}></FontAwesomeIcon>
     </a>
 </label>

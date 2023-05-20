@@ -8,9 +8,9 @@
 </script>
 
 {#if products.length > 0}
-    <div class="divide-y divide-slate-200">
-        <div class="px-4 py-2 bg-slate-200">
-            <h1 class="text-sm font-bold {color}">{name}</h1>
+    <div class="divide-y divide-white/20">
+        <div class="px-4 py-2 md:px-8 md:py-4">
+            <h1 class="text-sm md:text-md font-bold text-white">{name}</h1>
         </div>
         {#each products as product (product.id)}
             <Product {...product}/>
