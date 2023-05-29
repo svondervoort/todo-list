@@ -2,14 +2,14 @@
     import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
     import {faPencil} from "@fortawesome/free-solid-svg-icons/faPencil";
 
-    import { settings } from '../stores/settings.js';
+    import { settings } from '$lib/stores/settings.js';
     let showChecked;
     settings.subscribe(value => {
         showChecked = value.showChecked;
     });
 
     export let id;
-    export let name;
+    export let title;
     export let price = null;
     export let amount = 1;
     export let notes = null;
@@ -27,7 +27,7 @@
         {/if}
         <span class="flex-1">
             <span class="flex flex-col">
-                <span>{name}</span>
+                <span>{title}</span>
                 {#if notes}
                     <span class="text-xs text-slate-400">{notes}</span>
                 {/if}

@@ -1,11 +1,14 @@
 <script lang="ts">
     import type {PageData} from './$types';
+    import Category from '$lib/components/Category.svelte';
 
     export let data: PageData;
+
+    console.log(data.list.categories[0].items[0]);
 </script>
 
 <div class="divide-y divide-white/20 sm:rounded leading-5 text-white ring-1 ring-white/20 overflow-hidden">
-    {#each data.feed as list (list.id)}
-        <a href="/list/{list.id}" class="block px-4 py-2 md:px-8 md:py-4">{list.title}</a>
+    {#each data.list.categories as category (category.id)}
+        <Category {...category}/>
     {/each}
 </div>
