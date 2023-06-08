@@ -4,11 +4,8 @@ import type {PageServerLoad} from './$types';
 export const load = (async () => {
 
 // 1.
-    const response = await prisma.list.findMany({
-        // where: {published: true},
-        // include: {author: true},
-    })
+    const listResponse = await prisma.list.findMany()
 
 // 2.
-    return {feed: response};
+    return {feed: listResponse};
 }) satisfies PageServerLoad;

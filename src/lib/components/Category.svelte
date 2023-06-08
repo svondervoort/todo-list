@@ -1,9 +1,7 @@
 <script>
     import Item from '$lib/components/Item.svelte';
 
-    export let id;
     export let title;
-    export let color = 'text-slate-900';
     export let items;
 </script>
 

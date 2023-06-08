@@ -3,8 +3,6 @@
     import Category from '$lib/components/Category.svelte';
 
     export let data: PageData;
-
-    console.log(data.list.categories[0].items[0]);
 </script>
 
 <div class="divide-y divide-white/20 sm:rounded leading-5 text-white ring-1 ring-white/20 overflow-hidden">

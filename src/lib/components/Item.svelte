@@ -39,7 +39,7 @@
             </span>
         {/if}
     </span>
-    <a href="#" class="px-4 py-2 text-slate-300 hover:bg-white hover:text-black flex items-center justify-center">
+    <a href="/item/{id}" class="px-4 py-2 text-slate-300 hover:bg-white hover:text-black flex items-center justify-center">
         <FontAwesomeIcon class="fa-fw" icon={faPencil}></FontAwesomeIcon>
     </a>
 </label>

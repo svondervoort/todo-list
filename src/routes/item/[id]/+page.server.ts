@@ -4,15 +4,14 @@ import type {PageServerLoad} from './$types';
 export const load = (async ({ params: { id } }) => {
 
 // 1.
-    const listResponse = await prisma.list.findUnique({
+    const itemResponse = await prisma.item.findUnique({
         where: { id: Number(id) },
-        include: {
-            categories: {
-                include: { items: true }
-            }
-        },
     })
+    const categoriesResponse = await prisma.category.findMany()
 
 // 2.
-    return {list: listResponse};
+    return {
+        item: itemResponse,
+        categories: categoriesResponse
+    };
 }) satisfies PageServerLoad;
